@@ -1,0 +1,21 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="T4CSTest.dll" #>
+<#@ assembly name="System.Collections.Immutable.dll" #>
+<#@ assembly name="Microsoft.CodeAnalysis.dll" #>
+<#@ assembly name="Microsoft.CodeAnalysis.CSharp.dll" #>
+<#@ assembly name="mscorlib" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="T4CSTest" #>
+
+<#
+string code = "using System; namespace Foo { public class Program { public static void Main(string[] args) { Console.WriteLine(\"Hello, World\"); } } }";
+Utilities u = new Utilities();
+string ns = u.GetFirstNamespace(code);
+#>
+
+<% ns %>
+
+
